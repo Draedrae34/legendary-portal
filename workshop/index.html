@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Workshop - Login</title>
+    <link rel="stylesheet" href="css/workshop.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h1>Owner Workshop</h1>
+            <p>Enter your master password to access the private workshop.</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Master Password" required>
+                    <button type="button" id="toggle-password">Show</button>
+                </div>
+                <button type="submit" class="login-btn">Enter Workshop</button>
+            </form>
+            <div id="error-message" class="error-message"></div>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>
