@@ -3,125 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galactic Portal</title>
-    <link rel="stylesheet" href="css/workshop.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .galaxy-container {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .stars {
-            position: absolute;
-            background: transparent;
-            width: 1px;
-            height: 1px;
-            box-shadow: 1000px 1000px #fff;
-        }
-
-        .portal {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
-            animation: pulse 3s infinite;
-        }
-
-        .portal::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-            animation: rotate 10s linear infinite;
-        }
-
-        .portal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .portal-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
-        }
-
-        .portal-btn {
-            padding: 10px 20px;
-            background: rgba(0, 255, 255, 0.2);
-            border: 1px solid rgba(0, 255, 255, 0.5);
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
-        }
-
-        .portal-btn:hover {
-            background: rgba(0, 255, 255, 0.3);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <title>Mystical Galaxy Portal</title>
+    <link rel="stylesheet" href="./css/portal.css">
+    <script src="./js/portal.js"></script>
 </head>
 <body>
-    <div class="galaxy-container">
-        <div class="stars"></div>
-    </div>
-    <div class="portal">
-        <div class="portal-content">
-            <h1 class="portal-title">Galactic Portal</h1>
-            <button class="portal-btn">Enter</button>
+    <div class="portal-container">
+        <div class="portal"></div>
+        <div class="controls">
+            <button id="activate">Activate Portal</button>
+            <button id="deactivate">Deactivate Portal</button>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const galaxyContainer = document.querySelector('.galaxy-container');
-            const starDensity = 0.0003;
-
-            // Create stars
-            for (let i = 0; i < 1000; i++) {
-                const star = document.createElement('div');
-                star.className = 'stars';
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.animationDelay = `${Math.random() * 5}s`;
-                galaxyContainer.appendChild(star);
-            }
-        });
-    </script>
 </body>
 </html>
